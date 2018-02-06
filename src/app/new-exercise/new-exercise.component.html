@@ -1,0 +1,25 @@
+<div>
+   <!-- {{diagnostic}}-->
+    
+  <form #exerciseForm="ngForm" (ngSubmit)="createExercise()" >
+    <div class="form-group">
+        <label for="name">Exercise name</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight</label>
+      <input type="number" class="form-control" id="weight" required [(ngModel)]="model.weight" name="weight">
+  </div>
+  <div class="form-group">
+    <label for="reps">Reps</label>
+    <input type="number" class="form-control" id="reps" required [(ngModel)]="model.reps" name="reps">
+</div>
+<div class="form-group">
+  <label for="sets">Sets</label>
+  <input type="number" class="form-control" id="sets" required [(ngModel)]="model.sets" name="sets">
+</div>
+    <div class="form-row">
+      <button [disabled]="!exerciseForm.form.valid" type="submit" >Save</button>
+    </div>
+  </form>
+</div>

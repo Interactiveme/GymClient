@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Welcome {{stateService.userName}}</a>
+    
+    <button class="navbar-toggler" type="button" (click)= "toggleMenu()">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngClass]="classes" >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>  
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/workouts" routerLinkActive="active">Workouts</a>  
+        </li>
+        <div *ngIf="stateService.isLoggedIn; then logoutLink else loginLink"></div>
+        <ng-template #loginLink>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>  
+          </li>
+        </ng-template>
+        <ng-template #logoutLink>
+          <li class="nav-item">
+            <a style="cursor: pointer;" class="nav-link" (click)= "logout()" routerLinkActive="active">Logout</a>  
+          </li>
+        </ng-template>
+        
+      </ul>
+    </div>
+  </nav>

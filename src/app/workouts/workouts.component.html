@@ -1,0 +1,27 @@
+<h1>Workout List</h1>
+<div class="container" style="margin:10px;">
+<a class="btn btn-primary" routerLink="/workouts/new/"><span class="glyphicon glyphicon-plus"></span> Add New Workout</a>
+</div>
+<br/>
+<div>
+  <ul>
+    <li *ngFor=" let workout of workouts ">
+      <div>    
+            <span>
+              <a (click)="viewExercise($event, workout)">
+                {{ workout.name }}
+              </a>
+              <div class="pull-right">
+                <a [routerLink]="['/workouts/new', workout._id]">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                
+                <a (click)="deleteWorkout($event, workout)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+              </div>
+            </span>
+      </div>   
+    </li>
+  </ul>
+</div>

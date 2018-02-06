@@ -1,0 +1,24 @@
+<h1>Exercise List</h1>
+<br/>
+<a href="javascript:void(0)" (click)="addExercise($event)">Add Exercise</a>
+<br/>
+<table id="exercise-table">
+  <thead>
+    <th class="left-align">Name</th>
+    <th class="right-align">Sets</th> 
+    <th class="right-align">Reps</th>
+    <th class="right-align">Weight</th>
+  </thead>
+  <tbody>
+    <tr *ngFor=" let exercise of exercises ">          
+      <td class="left-align"> {{ exercise.name }}</td>
+      <td class="right-align"> {{ exercise.sets }}</td> 
+      <td class="right-align"> {{ exercise.reps }}</td> 
+      <td class="right-align"> {{ exercise.weight }} kg</td>
+      <td class="right-align">
+        <a href="javascript:void(0)" (click)="editExercise($event, exercise)">Edit</a>
+        <a href="javascript:void(0)" (click)="deleteExercise($event, exercise)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
