@@ -10,7 +10,8 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable()
 export class ExerciseService {
 
-    url = 'http://localhost:3000/exercises';
+    //url = 'http://localhost:3000/exercises';
+    url = 'https://gymserver100.herokuapp.com/exercises';
     httpOptions = {
         headers: new HttpHeaders({ 
             'Content-Type': 'application/json',

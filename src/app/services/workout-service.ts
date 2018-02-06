@@ -10,7 +10,8 @@ import { Workout } from '../models/workout';
 @Injectable()
 export class WorkoutService {
 
-    url = 'http://localhost:3000/workouts';
+    //url = 'http://localhost:3000/workouts';
+    url = 'https://gymserver100.herokuapp.com/workouts';
     httpOptions = {
         headers: new HttpHeaders({ 
             'Content-Type': 'application/json',

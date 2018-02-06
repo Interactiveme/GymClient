@@ -8,7 +8,8 @@ import { User } from '../models/user';
 @Injectable()
 export class UserService {
     
-    url = 'http://localhost:3000/user';
+    //url = 'http://localhost:3000/user';
+    url = 'https://gymserver100.herokuapp.com/user';
     private httpOptions = {
         headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
